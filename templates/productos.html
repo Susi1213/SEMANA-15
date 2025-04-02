@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block title %}Lista de Productos{% endblock %}
 
 {% block content %}
@@ -25,8 +26,13 @@
                 <td>{{ producto.precio }}</td>
                 <td>{{ producto.stock }}</td>
                 <td>
+                    <!-- Botón de editar -->
                     <a href="{{ url_for('editar_producto', id_producto=producto.id_producto) }}" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="{{ url_for('eliminar_producto', id_producto=producto.id_producto) }}" class="btn btn-danger btn-sm">Eliminar</a>
+
+                    <!-- Formulario para eliminar -->
+                    <form action="{{ url_for('eliminar_producto', id_producto=producto.id_producto) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}
