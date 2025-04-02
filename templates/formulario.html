@@ -18,4 +18,12 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
+<<<<<<< HEAD
                 <p style="color: green;">{{ message }}</p>
+=======
+                <p style="color: green;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+>>>>>>> d37ce8f (TR)
